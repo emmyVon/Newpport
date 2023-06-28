@@ -1,10 +1,11 @@
 import React from "react";
-import { Avatar, Grid, Heading, VStack,Image } from "@chakra-ui/react";
+import { Avatar, Grid, Heading, VStack,Image,Box, HStack } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 import profilepic from '../images/foliopic.jpeg'
+import { motion, transform } from "framer-motion";
 
 const greeting = "Hello, I am Pete!";
-const bio1 = "Hello I'm OBIEZUO EMMANUEL, frontend developer";
+const bio1 = "Hello I'm OBIEZUO EMMANUEL, frontend developer".split("")
 const bio2 = "specialised in React";
 
 // Implement the UI for the LandingSection component according to the instructions.
@@ -17,17 +18,30 @@ const LandingSection = () => (
     backgroundColor="#2A4365"
   >
     <Grid templateColumns={'1fr 1fr'} alignItems='center'>
-    <VStack>
-      {/* <Avatar name="avatar" src="https://i.pravatar.cc/150?img=7"/> */}
-      {greeting}
-      <Heading>
-        {bio1}
-      </Heading>
-      <Heading>
-        {bio2}
-      </Heading>
-    </VStack>
-    <Image src={profilepic} borderRadius='50% 50% 0 0' h='20rem' w='20rem'/>
+      <VStack>
+        <motion.div 
+        animate={{x:0}}
+        initial={{x:-600}}
+        transition={{duration:3}}
+
+        >
+             <HStack spacing={-6}>{bio1.map((word,index)=>{
+          return(
+          <Heading key={index}>{word}</Heading>
+          )
+        })}
+        </HStack>
+        </motion.div>
+       
+        <Heading>
+          {bio2}
+        </Heading>
+      </VStack>
+    <Box position='relative' h='20rem'  >
+      <Image src={profilepic} borderRadius='50% 50% 0 0' h='20rem' w='20rem' position='absolute' zIndex='1'transition='6s ease-out' _hover={{left:'2rem', top:'-3rem'}}/>
+      <Box boxSize='20.2rem'  borderRadius='50% 50% 0 0' left='2rem' top='-3rem' pos='absolute' border='2px solid red'/>
+    </Box>
+    
     </Grid>
     
     
