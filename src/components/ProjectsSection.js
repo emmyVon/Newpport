@@ -43,8 +43,8 @@ const ProjectsSection = () => {
       </Heading>
       <Box
         display="grid"
-        gridTemplateColumns="repeat(2,minmax(0,1fr))"
-        gridGap={8}
+        gridTemplateColumns="repeat(2,minmax(240px,1fr))"
+        gridGap={14}
       >
         {projects.map((project) => (
           <ProCard

@@ -5,7 +5,7 @@ import profilepic from '../images/foliopic.jpeg'
 import { motion, transform } from "framer-motion";
 
 const greeting = "Hello, I am Pete!";
-const bio1 = "Hello I'm OBIEZUO EMMANUEL, frontend developer".split("")
+const bio1 = "Hello I'm OBIEZUO EMMANUEL,frontend developer".split("")
 const bio2 = "specialised in React";
 
 // Implement the UI for the LandingSection component according to the instructions.
@@ -20,22 +20,24 @@ const LandingSection = () => (
     <Grid templateColumns={'1fr 1fr'} alignItems='center'>
       <VStack>
         <motion.div 
-        animate={{x:0}}
-        initial={{x:-600}}
-        transition={{duration:3}}
+        animate={{x:0, opacity:1}}
+        initial={{x:-600,opacity:0.3}}
+        transition={{type:"spring", duration:3, ease:"easeIn"}}
 
         >
-             <HStack spacing={-6}>{bio1.map((word,index)=>{
+             <HStack>{bio1.map((word,index)=>{
           return(
           <Heading key={index}>{word}</Heading>
           )
         })}
         </HStack>
         </motion.div>
-       
-        <Heading>
+       <motion.div initial={{y:100, opacity:0}} animate={{y:0,opacity:1}} transition={{delay:3.2}}>
+          <Heading>
           {bio2}
         </Heading>
+       </motion.div>
+       
       </VStack>
     <Box position='relative' h='20rem'  >
       <Image src={profilepic} borderRadius='50% 50% 0 0' h='20rem' w='20rem' position='absolute' zIndex='1'transition='6s ease-out' _hover={{left:'2rem', top:'-3rem'}}/>
