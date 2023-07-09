@@ -1,19 +1,16 @@
 import React, { useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import pic from '../images/foliopic.jpeg';
 import {
   faGithub,
   faLinkedin,
   faMedium,
   faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
-import { Box, HStack } from "@chakra-ui/react";
+import { Avatar, Box, HStack } from "@chakra-ui/react";
 
 const socials = [
-  {
-    icon: faEnvelope,
-    url: "mailto: hello@example.com",
-  },
   {
     icon: faGithub,
     url: "https://github.com",
@@ -21,10 +18,6 @@ const socials = [
   {
     icon: faLinkedin,
     url: "https://www.linkedin.com",
-  },
-  {
-    icon: faMedium,
-    url: "https://medium.com",
   },
   {
     icon: faStackOverflow,
@@ -67,19 +60,20 @@ const Header = () => {
       position="fixed"
       top={0}
       left={0}
-      right={0}
-      translateY={0}
-      transitionProperty="transform"
-      transitionDuration=".3s"
-      transitionTimingFunction="ease-in-out"
+      w='100vw'
+      
       backgroundColor="#18181b"
+      zIndex={2}
     >
-      <Box color="white" maxWidth="1280px" margin="0 auto">
+      <Box color="white" maxWidth="1280px" margin="0 auto" display='flex' alignItems='center'>
+         <Avatar boxSize='2rem' display={{base:'block', md:'none'}}/>
         <HStack
           px={16}
           py={4}
           justifyContent="space-between"
           alignItems="center"
+          w='100%'
+          className="nav-links"
         >
           <nav>
             <HStack
@@ -95,8 +89,9 @@ const Header = () => {
                   </ul>
                 )
               })}
-
+             
             </HStack>
+            
            
             {/* Add social media links based on the `socials` data */}
           </nav>
@@ -113,3 +108,9 @@ const Header = () => {
   );
 };
 export default Header;
+
+
+// translateY={0}
+//       transitionProperty="transform"
+//       transitionDuration=".3s"
+//       transitionTimingFunction="ease-in-out"
