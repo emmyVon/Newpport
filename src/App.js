@@ -7,13 +7,18 @@ import Footer from "./components/Footer";
 import Skills from './components/Skills'
 import { AlertProvider } from "./context/alertContext";
 import Alert from "./components/Alert";
+import { useState } from "react";
 
 function App() {
+  const [openMenu,setOpenMenu] = useState(false)
+  const opacity = {
+    opacity:'0.7'
+  }
   return (
     <ChakraProvider>
       <AlertProvider>
-        <main>
-         <Header />
+         <Header menu={openMenu} setMenu={setOpenMenu} />
+          <main className={openMenu?'mainPlus':''}>
           <LandingSection />
           <Skills/>
           <ProjectsSection /> 

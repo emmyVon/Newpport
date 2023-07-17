@@ -1,5 +1,5 @@
 import React from 'react'
-import {Box, Card,Image,Text, VStack,Flex} from '@chakra-ui/react'
+import {Box, Card,Image,Text, VStack,Flex, Grid} from '@chakra-ui/react'
 import js from '../images/js.jpg'
 import REACT from '../images/react.jpg'
 import Node from '../images/node js.jpg'
@@ -34,21 +34,21 @@ const skills = [{
 const Skills = () => {
   return (
     //  flexDirection={{base:'column', md:'row'}}
-    <Box display='flex' justifyContent='center' w='100%' gap='2rem' mt='3rem' mb='3rem'>
+    <Grid templateColumns='repeat(auto-fit,minmax(6rem,1fr))' alignItems='center' gap='0.7rem'justifyContent='center'>
     {skills.map((skill,index) =>{
         const {logo,name,level} = skill
         return(
-            <Card key={index} alignItems='center' gap='2rem' boxSize={{base:'6rem', md:'12rem'}} bg='orange.200'color='whitesmoke' p={4}>
+            <Card key={index} alignItems='center' boxSize={{base:'6rem', md:'12rem'}} bg='orange.200'color='whitesmoke' p={4}>
                 <VStack>
-                <Image src={logo}alt={name} boxSize='5rem'/>
-            <Flex placeItems='center' gap={3}><IoIosCheckmarkCircleOutline  style={{fill:'green' }}/>{name}</Flex>
+                <Image src={logo}alt={name} boxSize={['3rem', '5rem']}/>
+            <Flex placeItems='center' fontSize={['8px','8px']} gap={[1,3]}><IoIosCheckmarkCircleOutline  style={{fill:'green' }}/>{name}</Flex>
                 <Text>{level}</Text>
                 </VStack>
             </Card>
         )
     })
     }
-</Box>
+</Grid>
    
   )
 }

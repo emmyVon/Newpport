@@ -1,39 +1,42 @@
 import React from "react";
-import { Avatar, Grid, Heading, VStack,Image,Box, HStack } from "@chakra-ui/react";
+import { Avatar, Grid, Heading, VStack,Image,Box, HStack, Flex } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 import profilepic from '../images/foliopic.jpeg'
 import { motion, transform } from "framer-motion";
 
 const greeting = "Hello, I am Pete!";
-const bio1 = "Hello I'm OBIEZUO EMMANUEL,frontend developer".split("")
+const bio1 = "Hello Im OBIEZUO EMMANUEL,im a front-end developer";
 const bio2 = "specialised in React";
 
 // Implement the UI for the LandingSection component according to the instructions.
 // Use a combination of Avatar, Heading and VStack components.
-const LandingSection = () => (
+const LandingSection = () => {
+  const words = bio1.split(' ')
+  return(
   <FullScreenSection
     justifyContent="center"
     alignItems="center"
     isDarkBackground
     backgroundColor="#2A4365"
+    
   >
-    <Grid templateColumns={'1fr 1fr'} alignItems='center'gap={6}>
+    <Grid templateColumns={{base:'1fr', md:'1fr 1fr'}} gap='5rem'>
       <VStack>
         <motion.div 
         animate={{x:0, opacity:1}}
-        initial={{x:-600,opacity:0.3}}
+        initial={{x:-500,opacity:0.3}}
         transition={{type:"spring", duration:3, ease:"easeIn"}}
 
         >
-             <HStack>{bio1.map((word,index)=>{
-          return(
-          <Heading key={index}>{word}</Heading>
+             <HStack>
+              {words.map((word,index)=>(
+          <Heading fontSize={{base:'0.7rem',md:'1.3rem'}} fontWeight='800' key={index}>{word}</Heading>
           )
-        })}
+        )}
         </HStack>
         </motion.div>
        <motion.div initial={{y:100, opacity:0}} animate={{y:0,opacity:1}} transition={{delay:3.2}}>
-          <Heading>
+          <Heading fontSize={{base:'0.7rem',md:'1.3rem'}}>
           {bio2}
         </Heading>
        </motion.div>
@@ -50,6 +53,7 @@ const LandingSection = () => (
 
 
   </FullScreenSection>
-);
+
+)};
 
 export default LandingSection;

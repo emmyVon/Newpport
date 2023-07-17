@@ -7,27 +7,27 @@ const projects = [
   {
     title: "Shoe E-Commerce",
     description:
-      "Handy tool belt to create amazing AR components in a React app, with redux integration via middleware️",
+      "A shoe e-commerce site built with React, with ability to display different view of the Product. Well organised Cart and formatted total Price of Goods added to Cart ",
     getImageSrc: () => require("../images/e-commerce.jpg"),
     netlink:"https://guileless-alpaca-46d023.netlify.app"
   },
   {
     title: "Shorten-URL",
     description:
-      "A scrollable bottom sheet with virtualisation support, native animations at 60 FPS and fully implemented in JS land 🔥️",
+      "Landing Page for a App that Builds brand, create Shorter links and assisting in making brands publicly recognized",
     getImageSrc: () => require("../images/shorten-url.jpg"),
     netlink:"https://guileless-alpaca-46d023.netlify.app"
   },
   {
     title: "Easy Banking",
     description:
-      "A mobile application for leisure seekers to discover unique events and activities in their city with a few taps",
+      "Landing page for a Banking, with well mapped out layout on the essence of the Banking method and why it is top of other banking competitors",
     getImageSrc: () => require("../images/easy-bank.jpg"),
     netlink:"https://stunning-eclair-0dd058.netlify.app/"
   },{
     title: "Interactive Comment Section",
     description:
-      "A One-stop shop for photographers to share and monetize their photos, allowing them to have a second source of income",
+      "A Comment Section that can be integrated in many social media Apps, where users can make comments on a post and view others comment on the Post. Allows User to reply comments of other users, Edit or Delete personal comment or reply on the the Post.",
     getImageSrc: () => require("../images/comment-section.jpg"),
     netlink:"https://guileless-alpaca-46d023.netlify.app"
   },
