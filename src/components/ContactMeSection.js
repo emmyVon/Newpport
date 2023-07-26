@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useRef } from "react";
 import { useFormik } from "formik";
+import emailjs from '@emailjs/browser';
 import {
   Box,
   Button,
@@ -17,9 +18,22 @@ import FullScreenSection from "./FullScreenSection";
 import useSubmit from "../hooks/useSubmit";
 import { useAlertContext } from "../context/alertContext";
 
-const LandingSection = () => {
+const ContactMeSection = () => {
   const { isLoading, response, submit } = useSubmit();
   const { onOpen } = useAlertContext();
+
+  const form = useRef();
+
+   const sendEmail = (e) => {
+  
+
+    emailjs.sendForm('service_4umfxw8', 'template_17q095a', form.current, 'TMEg8zjiZHB3U1vr8')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -29,7 +43,8 @@ const LandingSection = () => {
       comment: "",
     },
     onSubmit: (values) => {
-      submit(values)
+      sendEmail()
+      
     },
     validationSchema: Yup.object({
       firstName: Yup.string()
@@ -44,6 +59,9 @@ const LandingSection = () => {
       comment: Yup.string().min(25, "Must be at least 25 characters").required("required"),
     }),
   });
+  
+
+ 
 
   return (
     <FullScreenSection
@@ -53,11 +71,11 @@ const LandingSection = () => {
       spacing={8}
     >
       <VStack w='100%' p={9} alignItems="flex-start">
-        <Heading as="h1" id="contactme-section">
+        <Heading as="h1" id="contactme" alignSelf={'center'}>
           Contact me
         </Heading>
         <Box p={2} rounded="md" w="100%">
-          <form onSubmit={formik.handleSubmit}>
+          <form onSubmit={formik.handleSubmit} ref={form}>
             <VStack spacing={4}>
               <FormControl
                 isInvalid={
@@ -96,7 +114,7 @@ const LandingSection = () => {
                   value={formik.values.type}
                   onChange={formik.handleChange}
                 >
-                  <option value="hireMe">Freelance project proposal</option>
+                  <option value="hireMe">Remote/Full-time Employment</option>
                   <option value="openSource">
                     Open source consultancy session
                   </option>
@@ -133,4 +151,4 @@ const LandingSection = () => {
   );
 };
 
-export default LandingSection;
+export default ContactMeSection;

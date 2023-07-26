@@ -9,9 +9,8 @@ const ProCard = ({ title, description, imageSrc,netlink}) => {
   // You should be able to implement the component with the elements imported above.
   // Feel free to import other UI components from Chakra UI if you wish to.
   return (
-    <Card bg='#000'className='procard' pos='relative'>
-      <VStack >
-      <Image src={imageSrc} h='20rem' objectFit='cover' className='cardimg'/>
+    <Card bg='#0005'className='procard' pos='relative'>
+      <Image src={imageSrc}  objectFit='contain' h='20rem'className='cardimg'/>
       <ButtonGroup pos='absolute' top='40%'spacing={8} className='probtn' display='none'>
         <Link color='white'>GitHub</Link>
         <Link color='white'href={netlink} isExternal>Netlify</Link>
@@ -20,7 +19,6 @@ const ProCard = ({ title, description, imageSrc,netlink}) => {
           <Heading fontSize='1.7rem'>{title}</Heading>
     <Text >{description}</Text>    
       </CardBody>
-      </VStack>
     </Card>
    
   );

@@ -16,7 +16,7 @@ const projects = [
     description:
       "Landing Page for a App that Builds brand, create Shorter links and assisting in making brands publicly recognized",
     getImageSrc: () => require("../images/Web capture_16-7-2023_23116_localhost.jpeg"),
-    netlink:"https://guileless-alpaca-46d023.netlify.app"
+    netlink:"https://gregarious-mooncake-142b52.netlify.app/"
   },
   {
     title: "Easy Banking",
@@ -34,20 +34,21 @@ const projects = [
 ];
 
 const ProjectsSection = () => {
+  // #14532d
   return (
-    <FullScreenSection
-      backgroundColor="#14532d"
+    <FullScreenSection        
+      backgroundColor="#3E267A"
       isDarkBackground
-      p={4}
-      alignItems="flex-start"
+      p={8}
+      alignItems="center"
       spacing={2}
     >
-      <Heading as="h1" id="projects-section">
+      <Heading as="h1" id="projects" marginBottom={5}>
         Featured Projects
       </Heading>
       <Box
         display="grid"
-        gridTemplateColumns="repeat(auto-fit,minmax(20rem,1fr))"
+        gridTemplateColumns="repeat(auto-fit,minmax(26rem,1fr))"
         gridGap={6}
       >
         {projects.map((project) => (

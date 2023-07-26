@@ -1,35 +1,24 @@
 import React, { useEffect, useRef, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {AiOutlineMenu} from 'react-icons/ai'
+import {AiOutlineMenu,AiOutlineGithub} from 'react-icons/ai'
+import {GrTwitter} from 'react-icons/gr'
 import {IoMdClose} from 'react-icons/io'
 import pic from '../images/foliopic.jpeg';
-import {
-  faGithub,
-  faLinkedin,
-  faMedium,
-  faStackOverflow,
-} from "@fortawesome/free-brands-svg-icons";
 import { Avatar, Box, Button, HStack } from "@chakra-ui/react";
 
 const socials = [
   {
-    icon: faGithub,
-    url: "https://github.com",
+    icon: <AiOutlineGithub/>,
+    url: "https://github.com/emmyVon",
   },
   {
-    icon: faLinkedin,
-    url: "https://www.linkedin.com",
-  },
-  {
-    icon: faStackOverflow,
-    url: "https://stackoverflow.com",
+    icon: <GrTwitter/>,
+    url: "https://twitter.com/emmyobiezuo",
   },
 ];
 
 const Header = ({menu,setMenu}) => {
-  
   const handleClick = (anchor) => () => {
-    const id = `${anchor}-section`;
+    const id = `${anchor}`;
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({
@@ -57,6 +46,9 @@ const Header = ({menu,setMenu}) => {
     };
   }, []);
 
+  
+ 
+
   return (
     <Box
       position="fixed"
@@ -68,7 +60,7 @@ const Header = ({menu,setMenu}) => {
       zIndex={2}
     >
       <Box color="white" boxSize='90%' marginInline='auto' display='flex' justifyContent='space-between'alignItems='center'  >
-         <Avatar boxSize='2rem' display={{base:'block', md:'none'}}/>
+         <Avatar boxSize='2rem' display={{base:'block', md:'none'}} src={pic}/>
         <Box
           px={16}
           py={4}
@@ -84,13 +76,14 @@ const Header = ({menu,setMenu}) => {
             order={{base:'2',md:'1'}}
               px={8}
               gap={3}
+              alignItems='center'
                 
             >
               {socials.map((social,index) => {
                 const { icon, url } = social
                 return (
                   <ul key={index}>
-                    <li><a href={url}><FontAwesomeIcon icon={icon} size='2x'/></a></li>
+                    <a href={url} style={{fontSize:'2rem'}}>{icon}</a>
                   </ul>
                 )
               })}
@@ -99,8 +92,8 @@ const Header = ({menu,setMenu}) => {
           </nav>
           <nav>
             <HStack spacing={4}  flexDir={{base:'column',md:'row'}} >
-              <a href='#contact-me' onClick={()=>handleClick(contact-me)} >Contact Me</a>
-              <a  href='#project' onClick={()=>handleClick(project)}>Projects</a>
+              <a href='#contactme' onClick={()=>handleClick(contactme)} >Contact Me</a>
+              <a  href='#projects' onClick={()=>handleClick(project)}>Projects</a>
             </HStack>
           </nav>
         </Box>
