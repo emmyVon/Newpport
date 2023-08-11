@@ -20,7 +20,7 @@ const LandingSection = () => {
     backgroundColor="#2A4365"
     
   >
-    <Grid templateColumns={{base:'1fr', md:'1fr 1fr'}} gap='5rem'>
+    <Grid templateColumns={{base:'1fr', md:'1fr 1fr'}} gap='2rem' alignItems={'center'} justifyContent={'center'}>
       <VStack>
         <motion.div 
         animate={{x:0, opacity:1}}
@@ -42,7 +42,7 @@ const LandingSection = () => {
        </motion.div>
        
       </VStack>
-    <Box position='relative' h='20rem' display={{base:'none',md:'inline-block'}} >
+    <Box position='relative' h='20rem' display={{base:'none', lg:'inline-block'}} >
       <Image src={profilepic} borderRadius='50% 50% 0 0' h='20rem' w='20rem' position='absolute' zIndex='1'transition='6s ease-out' _hover={{left:'2rem', top:'-3rem'}}/>
       <Box boxSize='20.2rem'  borderRadius='50% 50% 0 0' left='2rem' top='-3rem' pos='absolute' border='2px solid red'/>
     </Box>

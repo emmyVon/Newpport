@@ -1,7 +1,9 @@
 html{
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 .mainPlus{
+  overflow-y: hidden;
   opacity: 0.7;
 }
 .nav-link{
@@ -14,7 +16,7 @@ html{
 .procard:hover .probtn{
   display: flex;
 }
-@media (max-width:760px) {
+@media (max-width:768px) {
   .nav-link{
     top: 0;
       right: 0;
@@ -22,11 +24,14 @@ html{
       height: 90vh;
       color: black;
       flex-direction: column;
-      gap: 5rem;
+      gap: 1.5rem;
       display: none;
   }
   .open{
-    display: inline-block; 
+    display: flex; 
   }
+    .nav-link .menu-icons{
+      order:3;
+    }
   
 }

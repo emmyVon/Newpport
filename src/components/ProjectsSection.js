@@ -34,10 +34,10 @@ const projects = [
 ];
 
 const ProjectsSection = () => {
-  // #14532d
+  // #14532d #3E267A
   return (
     <FullScreenSection        
-      backgroundColor="#3E267A"
+      backgroundColor="#4C547E"
       isDarkBackground
       p={8}
       alignItems="center"
@@ -48,7 +48,7 @@ const ProjectsSection = () => {
       </Heading>
       <Box
         display="grid"
-        gridTemplateColumns="repeat(auto-fit,minmax(26rem,1fr))"
+        gridTemplateColumns="repeat(auto-fit,minmax(20rem,1fr))"
         gridGap={6}
       >
         {projects.map((project) => (

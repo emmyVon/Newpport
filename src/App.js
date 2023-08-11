@@ -11,9 +11,6 @@ import { useState } from "react";
 
 function App() {
   const [openMenu,setOpenMenu] = useState(false)
-  const opacity = {
-    opacity:'0.7'
-  }
   return (
     <ChakraProvider>
       <AlertProvider>

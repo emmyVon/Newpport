@@ -60,13 +60,13 @@ const ContactMeSection = () => {
     }),
   });
   
-
+// #512DA8
  
 
   return (
     <FullScreenSection
       isDarkBackground
-      backgroundColor="#512DA8"
+      backgroundColor="#6765AD"
       py={16}
       spacing={8}
     >
@@ -137,7 +137,7 @@ const ContactMeSection = () => {
               </FormControl>
               <Button
                 type="submit"
-                colorScheme="purple"
+                bg="blue"
                 width="full"
                 onClick={ ()=>onOpen(response)}
               >

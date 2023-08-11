@@ -31,21 +31,22 @@ const skills = [{
     level:'Intermediate'
 }
 ]
+// #2A4365 #1E3E73 #86AD88
 
 const Skills = () => {
   return (
     //  flexDirection={{base:'column', md:'row'}}
-    <VStack bg='#1E3E73' py={8}>
+    <VStack bg='#2A4365' py={8}>
         <Heading color='white'>Skills</Heading>
     <Grid templateColumns='repeat(auto-fit,minmax(6rem,1fr))' alignItems='center' gap='0.7rem'justifyContent='center' maxW='11920px' marginInline={'auto'} w={{base:'98vw',md:'90vw'}}>
     {skills.map((skill,index) =>{
         const {logo,name,level} = skill
         return(
-            <Card key={index} alignItems='center' boxSize={{base:'6rem', md:'12rem'}} bg='#86AD88'color='whitesmoke' p={4}>
+            <Card key={index} alignItems='center' boxSize={{base:'8rem', lg:'10rem'}} bg='#0095A1'color='whitesmoke' p={4}>
                 <VStack>
-                <Image src={logo}alt={name} boxSize={['3rem', '5rem']}/>
-            <Flex placeItems='center' fontSize={['8px','8px']} gap={[1,3]}><IoIosCheckmarkCircleOutline  style={{fill:'green' }}/>{name}</Flex>
-                <Text>{level}</Text>
+                <Image src={logo}alt={name} boxSize={{base:'3rem',lg:'5rem'}}/>
+            <Flex placeItems='center' fontSize={['8px','10px']} gap={[1,3]}><IoIosCheckmarkCircleOutline  style={{fill:'green' }}/>{name}</Flex>
+                <Text fontSize={['8px','12px']}>{level}</Text>
                 </VStack>
             </Card>
         )

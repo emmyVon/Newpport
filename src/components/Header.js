@@ -3,7 +3,7 @@ import {AiOutlineMenu,AiOutlineGithub} from 'react-icons/ai'
 import {GrTwitter} from 'react-icons/gr'
 import {IoMdClose} from 'react-icons/io'
 import pic from '../images/foliopic.jpeg';
-import { Avatar, Box, Button, HStack } from "@chakra-ui/react";
+import { Avatar, Box, Button, Flex, HStack } from "@chakra-ui/react";
 
 const socials = [
   {
@@ -62,18 +62,16 @@ const Header = ({menu,setMenu}) => {
       <Box color="white" boxSize='90%' marginInline='auto' display='flex' justifyContent='space-between'alignItems='center'  >
          <Avatar boxSize='2rem' display={{base:'block', md:'none'}} src={pic}/>
         <Box
-          px={16}
+          px={4}
           py={4}
-          flex='1'
           pos={{base:'absolute',md:'relative'}}
           justifyContent={{base:'flex-start',md:'space-between'}}
           alignItems={{base:'flex-start',md:'center'}}  
           className={menu? 'nav-link open':'nav-link'}
         >
-          <Button variant='outline' color={{base:'black',md:'white'}} size='sm' display={{base:"flex", md:"none"}} onClick={()=>setMenu(false)}><IoMdClose fontWeight='bold'/></Button>
-          <nav>
+          <Button variant='outline' color={{base:'black',md:'white'}} size='sm' display={{base:"block", md:"none"}} onClick={()=>setMenu(false)}><IoMdClose fontWeight='bold'/></Button>
+          <nav className="menu-icons">
             <HStack
-            order={{base:'2',md:'1'}}
               px={8}
               gap={3}
               alignItems='center'
@@ -97,7 +95,7 @@ const Header = ({menu,setMenu}) => {
             </HStack>
           </nav>
         </Box>
-        <Button display={['block','none']} colorScheme="#808080" onClick={()=>setMenu(true)}>
+        <Button display={['block','block','none']} colorScheme="#808080" onClick={()=>setMenu(true)}>
            <AiOutlineMenu />
         </Button>
       </Box>
