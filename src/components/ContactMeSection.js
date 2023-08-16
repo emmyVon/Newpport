@@ -17,21 +17,27 @@ import * as Yup from "yup";
 import FullScreenSection from "./FullScreenSection";
 import useSubmit from "../hooks/useSubmit";
 import { useAlertContext } from "../context/alertContext";
-
+const serviceid = process.env.REACT_APP_EMAILJS_SERVICEID
+const templateid = process.env.REACT_APP_EMAILJS_TEMPLATEID
+const publickey = process.env.REACT_APP_EMAILJS_PUBLICKEY
 const ContactMeSection = () => {
-  const { isLoading, response, submit } = useSubmit();
-  const { onOpen } = useAlertContext();
+  // const { isLoading, response, submit } = useSubmit();
+  const { onOpen,onClose } = useAlertContext();
 
   const form = useRef();
 
    const sendEmail = (e) => {
   
 
-    emailjs.sendForm('service_4umfxw8', 'template_17q095a', form.current, 'TMEg8zjiZHB3U1vr8')
+    emailjs.sendForm('service_4umfxw8','template_17q095a', form.current, 'TMEg8zjiZHB3U1vr8')
       .then((result) => {
-          console.log(result.text);
+        onOpen('success', 'Response sent to Emmanuel');
+         setTimeout(()=>onClose(),2000)
+         console.log('submitted')
       }, (error) => {
-          console.log(error.text);
+           onOpen('error', 'Failed, please try again');
+            setTimeout(()=>onClose(),2000)
+            console.log(error)
       });
   };
 
@@ -56,7 +62,7 @@ const ContactMeSection = () => {
         .email("invalid email address")
         .required("required"),
       type: Yup.string().oneOf(["hireMe", "openSource", "other"]),
-      comment: Yup.string().min(25, "Must be at least 25 characters").required("required"),
+      comment: Yup.string().required("required"),
     }),
   });
   
@@ -139,7 +145,6 @@ const ContactMeSection = () => {
                 type="submit"
                 bg="blue"
                 width="full"
-                onClick={ ()=>onOpen(response)}
               >
                 Submit
               </Button>

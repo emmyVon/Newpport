@@ -60,10 +60,11 @@ const Header = ({menu,setMenu}) => {
       zIndex={2}
     >
       <Box color="white" boxSize='90%' marginInline='auto' display='flex' justifyContent='space-between'alignItems='center'  >
-         <Avatar boxSize='2rem' display={{base:'block', md:'none'}} src={pic}/>
+         <Avatar boxSize='3.2rem' display={{base:'block', md:'none'}} src={pic}/>
         <Box
           px={4}
           py={4}
+          flex='1'
           pos={{base:'absolute',md:'relative'}}
           justifyContent={{base:'flex-start',md:'space-between'}}
           alignItems={{base:'flex-start',md:'center'}}  
