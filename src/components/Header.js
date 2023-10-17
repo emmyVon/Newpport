@@ -17,34 +17,38 @@ const socials = [
 ];
 
 const Header = ({menu,setMenu}) => {
-  const handleClick = (anchor) => () => {
-    const id = `${anchor}`;
+  const handleClick = (e) => {
+    e.preventDefault();
+    const id = e.currentTarget.getattribute('href').slice(1)
     const element = document.getElementById(id);
+    const navheight = document.getElementById('nav').getBoundingClientRect().height
+    console.log(navheight)
+    let position = element.offsetTop - navheight
     if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
+      element.scrollTo({
+       left:0,
+       top:100
       });
     }
   };
 
-  useEffect(() => {
-    const handleScroll = (event) => {
-      if (scrollPositionY.current < window.scrollY) {
-        scrollPositionY.current = window.scrollY;
-        navBoxElement.current.style.transform = `translateY(-200px)`; // Hide
-      } else if (scrollPositionY.current > window.scrollY) {
-        scrollPositionY.current = window.scrollY;
-        navBoxElement.current.style.transform = `translateY(0px)`; // Show
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = (event) => {
+  //     if (scrollPositionY.current < window.scrollY) {
+  //       scrollPositionY.current = window.scrollY;
+  //       navBoxElement.current.style.transform = `translateY(-200px)`; // Hide
+  //     } else if (scrollPositionY.current > window.scrollY) {
+  //       scrollPositionY.current = window.scrollY;
+  //       navBoxElement.current.style.transform = `translateY(0px)`; // Show
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   
  
@@ -57,6 +61,7 @@ const Header = ({menu,setMenu}) => {
       w='100vw'
       h='5rem'
       backgroundColor="#18181b"
+      id="nav"
       zIndex={2}
     >
       <Box color="white" boxSize='90%' marginInline='auto' display='flex' justifyContent='space-between'alignItems='center'  >
@@ -92,7 +97,7 @@ const Header = ({menu,setMenu}) => {
           <nav>
             <HStack spacing={4}  flexDir={{base:'column',md:'row'}} >
               <a href='#contactme' onClick={()=>handleClick(contactme)} >Contact Me</a>
-              <a  href='#projects' onClick={()=>handleClick(project)}>Projects</a>
+              <a  href='#projects' onClick={()=>handleClick(projects)}>Projects</a>
             </HStack>
           </nav>
         </Box>
