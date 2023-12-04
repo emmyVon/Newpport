@@ -17,19 +17,25 @@ const socials = [
 ];
 
 const Header = ({menu,setMenu}) => {
+
   const handleClick = (e) => {
     e.preventDefault();
-    const id = e.currentTarget.getattribute('href').slice(1)
+    
+    const id = e.currentTarget.getAttribute('href').slice(1); 
     const element = document.getElementById(id);
-    const navheight = document.getElementById('nav').getBoundingClientRect().height
-    console.log(navheight)
-    let position = element.offsetTop - navheight
+    console.log(`triggered ${element}`)
     if (element) {
+      const navheight = document.getElementById('nav').getBoundingClientRect().height
+      const position = element.offsetTop - navheight 
       element.scrollTo({
-       left:0,
-       top:100
+        left:0,
+        top:position
       });
     }
+    else{
+      console.error(`Element with id ${id} not found`)
+    }
+    setMenu(false)
   };
 
   // useEffect(() => {
@@ -96,8 +102,8 @@ const Header = ({menu,setMenu}) => {
           </nav>
           <nav>
             <HStack spacing={4}  flexDir={{base:'column',md:'row'}} >
-              <a href='#contactme' onClick={()=>handleClick(contactme)} >Contact Me</a>
-              <a  href='#projects' onClick={()=>handleClick(projects)}>Projects</a>
+              <a href='#contactme' onClick={handleClick} >Contact Me</a>
+              <a  href='#projects' onClick={handleClick}>Projects</a>
             </HStack>
           </nav>
         </Box>
