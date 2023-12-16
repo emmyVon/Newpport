@@ -46,9 +46,8 @@ const ProjectsSection = () => {
       py={24}
       alignItems="center"
       spacing={2}
-      id="projects"
     >
-      <Heading as="h1" marginBottom={5}>
+      <Heading as="h1" marginBottom={5} id="projects">
         Featured Projects
       </Heading>
       <Box display="grid" gridTemplateColumns="repeat(auto-fit,minmax(20rem,1fr))" gridGap={6}>

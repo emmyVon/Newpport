@@ -17,24 +17,21 @@ const socials = [
 ];
 
 const Header = ({ menu, setMenu }) => {
-  // const handleClick = (e) => {
-  //   e.preventDefault();
+  const handleClick = (e) => {
+    e.preventDefault();
 
-  //   const id = e.currentTarget.getAttribute("href").slice(1);
-  //   const element = document.getElementById(id);
-  //   console.log(`triggered ${element}`);
-  //   if (element) {
-  //     const navheight = document.getElementById("nav").getBoundingClientRect().height;
-  //     const position = element.offsetTop - navheight;
-  //     element.scrollTo({
-  //       left: 0,
-  //       top: position,
-  //     });
-  //   } else {
-  //     console.error(`Element with id ${id} not found`);
-  //   }
-  //   setMenu(false);
-  // };
+    const id = e.currentTarget.getAttribute("href").slice(1);
+    const element = document.getElementById(id);
+    console.log(`triggered ${element}`);
+    if (element) {
+      const navheight = document.getElementById("nav").getBoundingClientRect().height;
+      const position = element.offsetTop - navheight;
+      window.scrollTo({ top: position, left: 0, behavior: "smooth" });
+    } else {
+      console.error(`Element with id ${id} not found`);
+    }
+    setMenu(false);
+  };
 
   // useEffect(() => {
   //   const handleScroll = (event) => {
@@ -108,8 +105,12 @@ const Header = ({ menu, setMenu }) => {
           </nav>
           <nav>
             <HStack spacing={4} flexDir={{ base: "column", md: "row" }}>
-              <a href="#contactme">Contact Me</a>
-              <a href="#projects">Projects</a>
+              <a href="#contactme" onClick={handleClick}>
+                Contact Me
+              </a>
+              <a href="#projects" onClick={handleClick}>
+                Projects
+              </a>
             </HStack>
           </nav>
         </Box>
