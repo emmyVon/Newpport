@@ -1,10 +1,11 @@
 import React from "react";
-import { Avatar, Grid, Heading, VStack,Image,Box, HStack, Flex } from "@chakra-ui/react";
+import { Avatar, Grid, Heading, VStack,Image,Box, HStack, Flex, Button } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 import profilepic from '../images/foliopic.jpeg'
 import { motion, transform } from "framer-motion";
+import { Zoom } from "react-reveal";
 
-const greeting = "Hello, I am Pete!";
+
 const bio1 = "Hello Im OBIEZUO EMMANUEL,im a front-end developer";
 const bio2 = "specialised in React";
 
@@ -40,10 +41,12 @@ const LandingSection = () => {
           {bio2}
         </Heading>
        </motion.div>
+       <Zoom delay={2500}>
+       <Button><a href="./CV.pdf" download='./CV.pdf'>Download CV</a></Button></Zoom>
        
       </VStack>
     <Box position='relative' h='20rem' display={{base:'none', lg:'inline-block'}} >
-      <Image src={profilepic} borderRadius='50% 50% 0 0' h='20rem' w='20rem' position='absolute' zIndex='1'transition='6s ease-out' _hover={{left:'2rem', top:'-3rem'}}/>
+      <Image src={profilepic} borderRadius='50% 50% 0 0' h='20rem' w='20rem' position='absolute' zIndex='1'transition='6s ease-out'  className="propic"/>
       <Box boxSize='20.2rem'  borderRadius='50% 50% 0 0' left='2rem' top='-3rem' pos='absolute' border='2px solid red'/>
     </Box>
     

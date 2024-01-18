@@ -2,6 +2,9 @@ import React from "react";
 import FullScreenSection from "./FullScreenSection";
 import { Box, Heading } from "@chakra-ui/react";
 import ProCard from "./ProCard";
+import Fade from 'react-reveal/Fade';
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const projects = [
   {
@@ -11,6 +14,7 @@ const projects = [
     getImageSrc: () =>
       require("../images/Web capture_19-7-2023_182825_remarkable-churros-670b96.netlify.app.jpeg"),
     netlink: "https://remarkable-churros-670b96.netlify.app/",
+    gitlink:"https://github.com/emmyVon/shoe-ecommerce"
   },
   {
     title: "Shorten-URL",
@@ -18,6 +22,7 @@ const projects = [
       "Landing Page for a App that Builds brand, create Shorter links and assisting in making brands publicly recognized",
     getImageSrc: () => require("../images/Web capture_16-7-2023_23116_localhost.jpeg"),
     netlink: "https://gregarious-mooncake-142b52.netlify.app/",
+    gitlink:"https://github.com/emmyVon/shortenUrl"
   },
   {
     title: "Easy Banking",
@@ -26,6 +31,7 @@ const projects = [
     getImageSrc: () =>
       require("../images/Web capture_19-7-2023_175729_stunning-eclair-0dd058.netlify.app.jpeg"),
     netlink: "https://stunning-eclair-0dd058.netlify.app/",
+    gitlink: "https://github.com/emmyVon/easybank"
   },
   {
     title: "Interactive Comment Section",
@@ -33,24 +39,26 @@ const projects = [
       "A Comment Section that can be integrated in many social media Apps, where users can make comments on a post and view others comment on the Post. Allows User to reply comments of other users, Edit or Delete personal comment or reply on the the Post.",
     getImageSrc: () => require("../images/comment-section.jpg"),
     netlink: "https://celadon-pika-5854ad.netlify.app/",
+    gitlink:"https://github.com/emmyVon/convoApp"
   },
 ];
 
 const ProjectsSection = () => {
-  // #14532d #3E267A
+  // #14532d #3E267A "#4C547E"
   return (
     <FullScreenSection
-      backgroundColor="#4C547E"
+      backgroundColor= "#2A4365"
       isDarkBackground
       p={8}
       py={24}
       alignItems="center"
       spacing={2}
     >
+       <Fade duration="4000" bottom="true" distance="40%">
       <Heading as="h1" marginBottom={5} id="projects">
         Featured Projects
       </Heading>
-      <Box display="grid" gridTemplateColumns="repeat(auto-fit,minmax(20rem,1fr))" gridGap={6}>
+      <Box  display="grid" gridTemplateColumns="repeat(auto-fit,minmax(20rem,1fr))" gridGap={6}>
         {projects.map((project) => (
           <ProCard
             key={project.title}
@@ -58,9 +66,11 @@ const ProjectsSection = () => {
             description={project.description}
             imageSrc={project.getImageSrc()}
             netlink={project.netlink}
+            gitlink={project.gitlink}
           />
         ))}
       </Box>
+      </Fade>
     </FullScreenSection>
   );
 };

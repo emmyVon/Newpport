@@ -2,6 +2,14 @@ html{
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #2A4365;
+}
 .mainPlus{
   overflow: hidden;
   opacity: 0.7;
@@ -15,6 +23,14 @@ html{
 }
 .procard:hover .probtn{
   display: flex;
+}
+.propic{
+  animation: boxmove 2s 2s 1 forwards;
+}
+@keyframes boxmove {
+  from {left:0; top:0}
+  to {left:2rem; top: -3rem;}
+  
 }
 @media (max-width:768px) {
   .nav-link{

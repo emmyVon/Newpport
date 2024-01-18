@@ -95,7 +95,7 @@ const Header = ({ menu, setMenu }) => {
                 const { icon, url } = social;
                 return (
                   <ul key={index}>
-                    <a href={url} style={{ fontSize: "2rem" }}>
+                    <a href={url} target="_blank" style={{ fontSize: "2rem" }} onClick={() => setMenu(false)}>
                       {icon}
                     </a>
                   </ul>

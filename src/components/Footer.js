@@ -2,6 +2,7 @@ import React from "react";
 import {Box, Flex} from "@chakra-ui/react";
 
 const Footer = () => {
+  const date = new Date()
   return (
     <Box backgroundColor="#18181b">
       <footer>
@@ -14,7 +15,7 @@ const Footer = () => {
           maxWidth="1024px"
           height={16}
         >
-          <p>Emmanuel • © 2022</p>
+          <p>{`Emmanuel • © ${date.getFullYear()}`}</p>
         </Flex>
       </footer>
     </Box>

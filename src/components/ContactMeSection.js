@@ -17,6 +17,7 @@ import * as Yup from "yup";
 import FullScreenSection from "./FullScreenSection";
 import useSubmit from "../hooks/useSubmit";
 import { useAlertContext } from "../context/alertContext";
+import { Fade } from "react-reveal";
 const serviceid = process.env.REACT_APP_EMAILJS_SERVICEID;
 const templateid = process.env.REACT_APP_EMAILJS_TEMPLATEID;
 const publickey = process.env.REACT_APP_EMAILJS_PUBLICKEY;
@@ -62,11 +63,13 @@ const ContactMeSection = () => {
     }),
   });
 
-  // #512DA8
+  // #512DA8 "#6765AD"
 
   return (
-    <FullScreenSection isDarkBackground backgroundColor="#6765AD" py={16} spacing={8}>
-      <VStack w="100%" p={9} alignItems="flex-start">
+    
+    <FullScreenSection isDarkBackground backgroundColor= "#2A4365" py={16} spacing={8}>
+      
+      <VStack w={'100%'}  p={9} alignItems="flex-start">
         <Heading as="h1" alignSelf={"center"} id="contactme">
           Contact me
         </Heading>
@@ -126,6 +129,7 @@ const ContactMeSection = () => {
         </Box>
       </VStack>
     </FullScreenSection>
+     
   );
 };
 
