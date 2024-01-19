@@ -4,8 +4,6 @@ import FullScreenSection from "./FullScreenSection";
 import profilepic from '../images/foliopic.jpeg'
 import { motion, transform } from "framer-motion";
 
-import { Zoom } from "react-reveal";
-
 
 const bio1 = "Hello Im OBIEZUO EMMANUEL,im a front-end developer";
 const bio2 = "specialised in React";

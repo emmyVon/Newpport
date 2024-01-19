@@ -3,9 +3,6 @@ import FullScreenSection from "./FullScreenSection";
 import { Box, Heading } from "@chakra-ui/react";
 import ProCard from "./ProCard";
 
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-
 const projects = [
   {
     title: "Shoe E-Commerce",
