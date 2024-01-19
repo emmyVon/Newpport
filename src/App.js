@@ -10,8 +10,14 @@ import Alert from "./components/Alert";
 import { useState,useEffect } from "react";
 import {motion, useAnimation} from "framer-motion"
 import AboutMe from "./components/AboutMe";
+import 'aos/dist/aos.css'
+import AOS from 'aos'
+
 
 function App() {
+  useEffect(()=>{
+    AOS.init()
+  },[])
   const [openMenu,setOpenMenu] = useState(false);
   const controls = useAnimation();
   useEffect(()=>{

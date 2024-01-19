@@ -54,8 +54,8 @@ const ProjectsSection = () => {
       alignItems="center"
       spacing={2}
     >
-       <Fade duration="4000" bottom="true" distance="40%">
-      <Heading as="h1" marginBottom={5} id="projects">
+       <div data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in" style={{ display:"flex", flexDirection:"Column",alignItems:'center'}}id="projects">
+      <Heading as="h1" marginBottom={5} >
         Featured Projects
       </Heading>
       <Box  display="grid" gridTemplateColumns="repeat(auto-fit,minmax(20rem,1fr))" gridGap={6}>
@@ -70,7 +70,7 @@ const ProjectsSection = () => {
           />
         ))}
       </Box>
-      </Fade>
+    </div>
     </FullScreenSection>
   );
 };

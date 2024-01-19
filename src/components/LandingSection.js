@@ -3,6 +3,7 @@ import { Avatar, Grid, Heading, VStack,Image,Box, HStack, Flex, Button } from "@
 import FullScreenSection from "./FullScreenSection";
 import profilepic from '../images/foliopic.jpeg'
 import { motion, transform } from "framer-motion";
+
 import { Zoom } from "react-reveal";
 
 
@@ -41,8 +42,8 @@ const LandingSection = () => {
           {bio2}
         </Heading>
        </motion.div>
-       <Zoom delay={2500}>
-       <Button><a href="./CV.pdf" download='./CV.pdf'>Download CV</a></Button></Zoom>
+       
+       <motion.button initial={{opacity:0}} animate={{y:0,opacity:1}} transition={{delay:3.7}} style={{backgroundColor:"black",padding:"6px",borderRadius:"6px",fontWeight:"300"}}><a href="./CV.pdf" download='./CV.pdf'>Download CV</a></motion.button>
        
       </VStack>
     <Box position='relative' h='20rem' display={{base:'none', lg:'inline-block'}} >

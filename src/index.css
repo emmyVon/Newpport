@@ -2,6 +2,7 @@ html{
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
+@import 'aos/dist/aos.css';
 *{
   padding: 0;
   margin: 0;

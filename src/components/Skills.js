@@ -42,6 +42,7 @@ const Skills = () => {
     {skills.map((skill,index) =>{
         const {logo,name,level} = skill
         return(
+            <div data-aos="fade-right-up" data-aos-duration="2000" data-aos-delay={`${index * 300}`}>
             <Card key={index} alignItems='center' boxSize={{base:'7rem', lg:'10rem'}} bg='#0095A1'color='whitesmoke' p={4}>
                 <VStack>
                 <Image src={logo}alt={name} boxSize={{base:'3rem',lg:'5rem'}}/>
@@ -49,6 +50,7 @@ const Skills = () => {
                 <Text fontSize={['8px','12px']}>{level}</Text>
                 </VStack>
             </Card>
+            </div>
         )
     })
     }
