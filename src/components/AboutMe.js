@@ -1,6 +1,6 @@
 import { Heading, Text } from "@chakra-ui/react"
 import FullScreenSection from "./FullScreenSection"
-import { Fade } from "react-reveal"
+
 
 const AboutMe = ()=>{
     return(

@@ -2,7 +2,7 @@ import React from "react";
 import FullScreenSection from "./FullScreenSection";
 import { Box, Heading } from "@chakra-ui/react";
 import ProCard from "./ProCard";
-import Fade from 'react-reveal/Fade';
+
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 

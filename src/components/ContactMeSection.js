@@ -17,7 +17,7 @@ import * as Yup from "yup";
 import FullScreenSection from "./FullScreenSection";
 import useSubmit from "../hooks/useSubmit";
 import { useAlertContext } from "../context/alertContext";
-import { Fade } from "react-reveal";
+
 const serviceid = process.env.REACT_APP_EMAILJS_SERVICEID;
 const templateid = process.env.REACT_APP_EMAILJS_TEMPLATEID;
 const publickey = process.env.REACT_APP_EMAILJS_PUBLICKEY;
