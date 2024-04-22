@@ -5,7 +5,7 @@ import profilepic from '../images/foliopic.jpeg'
 import { motion, transform } from "framer-motion";
 
 
-const bio1 = "Hello Im OBIEZUO EMMANUEL,im a front-end developer";
+const bio1 = "Hello Im OBIEZUO EMMANUEL, im a frontend developer Specialised in React";
 const bio2 = "specialised in React";
 
 // Implement the UI for the LandingSection component according to the instructions.
@@ -22,26 +22,19 @@ const LandingSection = () => {
   >
     <Grid templateColumns={{base:'1fr', md:'1fr 1fr'}} gap='2rem' alignItems={'center'} justifyContent={'center'}>
       <VStack>
-        <motion.div 
-        animate={{x:0, opacity:1}}
-        initial={{x:-500,opacity:0.3}}
-        transition={{type:"spring", duration:3, ease:"easeIn"}}
-
-        >
-             <HStack>
-              {words.map((word,index)=>(
-          <Heading fontSize={{base:'0.7rem',md:'1.3rem'}} fontWeight='800' key={index}>{word}</Heading>
-          )
-        )}
-        </HStack>
-        </motion.div>
-       <motion.div initial={{y:100, opacity:0}} animate={{y:0,opacity:1}} transition={{delay:3.2}}>
+        <Box display='flex'gap={2} fontWeight='bold' flexWrap='wrap'> 
+       {
+       words.map((word,index)=>(
+           <motion.p initial={{opacity:0}} animate={{opacity:1}} transition={{delay:index *0.8}} style={{}}>{word}</motion.p>
+        ))}
+        </Box>
+       {/* <motion.div initial={{y:100, opacity:0}} animate={{y:0,opacity:1}} transition={{delay:3.2}}>
           <Heading fontSize={{base:'0.7rem',md:'1.3rem'}}>
           {bio2}
         </Heading>
-       </motion.div>
+       </motion.div> */}
        
-       <motion.button initial={{opacity:0}} animate={{y:0,opacity:1}} transition={{delay:3.7}} style={{backgroundColor:"black",padding:"6px",borderRadius:"6px",fontWeight:"300"}}><a href="./CV.pdf" download='./CV.pdf'>Download CV</a></motion.button>
+       <motion.button initial={{opacity:0}} animate={{y:0,opacity:1}} transition={{delay:5}} style={{backgroundColor:"black",padding:"6px",borderRadius:"6px",fontWeight:"300"}}><a href="./CV.pdf" download='./CV.pdf'>Download CV</a></motion.button>
        
       </VStack>
     <Box position='relative' h='20rem' display={{base:'none', lg:'inline-block'}} >

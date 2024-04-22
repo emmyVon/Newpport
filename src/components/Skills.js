@@ -11,7 +11,7 @@ import FullScreenSection from './FullScreenSection'
 
 const skills = [{
     logo:js,
-    name: "HTML,CSS,JAVASCRIPT",
+    name: "JAVASCRIPT",
     level:"Experienced"
 },{
     logo:REACT,
@@ -37,17 +37,17 @@ const Skills = () => {
   return (
     //  flexDirection={{base:'column', md:'row'}}
     <VStack bg='#2A4365' py={8}>
-        <Heading color='white'>Skills</Heading>
+        <Heading color='white'fontSize={{base:'1rem',md:'3rem'}}>Skills</Heading>
     <Grid templateColumns='repeat(auto-fit,minmax(7rem,1fr))' alignItems='center' gap='0.7rem'justifyContent='center' maxW='11920px' marginInline={'auto'} w={{base:'98vw',md:'90vw'}}>
     {skills.map((skill,index) =>{
         const {logo,name,level} = skill
         return(
             <div data-aos="fade-right-up" data-aos-duration="2000" data-aos-delay={`${index * 300}`}>
-            <Card key={index} alignItems='center' boxSize={{base:'7rem', lg:'10rem'}} bg='#0095A1'color='whitesmoke' p={4}>
+            <Card key={index} alignItems='center' boxSize={{base:'5rem', md:'8rem'}} bg='#0095A1'color='whitesmoke' p={2}>
                 <VStack>
-                <Image src={logo}alt={name} boxSize={{base:'3rem',lg:'5rem'}}/>
-            <Flex placeItems='center' fontSize={['8px','10px']} gap={[1,3]}><IoIosCheckmarkCircleOutline  style={{fill:'green' }}/>{name}</Flex>
-                <Text fontSize={['8px','12px']}>{level}</Text>
+                <Image src={logo}alt={name} boxSize={{base:'1.4rem',md:'4rem'}}/>
+            <Flex placeItems='center' fontSize={['8px','10px']} gap={[1,3] } ><IoIosCheckmarkCircleOutline  style={{fill:'green' }}/><Text flexWrap='wrap' fontSize={{base:'6px',md:'10px'}}>{name}</Text></Flex>
+                <Text fontSize={{base:'6px',md:'10px'}}>{level}</Text>
                 </VStack>
             </Card>
             </div>

@@ -38,7 +38,7 @@ return ()=>window.removeEventListener('scroll',handleScroll);},[])
           <motion.main initial={{opacity:0,y:0}} animate={controls} className={openMenu?'mainPlus':''}>
           <LandingSection />
           <AboutMe/>
-          <Skills/>
+          {/* <Skills/> */}
           <ProjectsSection /> 
           <ContactMeSection />
           <Footer />

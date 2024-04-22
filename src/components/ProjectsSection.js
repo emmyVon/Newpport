@@ -46,13 +46,10 @@ const ProjectsSection = () => {
     <FullScreenSection
       backgroundColor= "#2A4365"
       isDarkBackground
-      p={8}
-      py={24}
       alignItems="center"
-      spacing={2}
     >
        <div data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in" style={{ display:"flex", flexDirection:"Column",alignItems:'center'}}id="projects">
-      <Heading as="h1" marginBottom={5} >
+      <Heading fontSize={{base:'1rem',md:'3rem'}} as="h1" marginBottom={5} >
         Featured Projects
       </Heading>
       <Box  display="grid" gridTemplateColumns="repeat(auto-fit,minmax(20rem,1fr))" gridGap={6}>

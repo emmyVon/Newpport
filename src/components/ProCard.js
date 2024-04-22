@@ -10,7 +10,7 @@ const ProCard = ({ title, description, imageSrc,netlink,gitlink}) => {
   // Feel free to import other UI components from Chakra UI if you wish to.
   return (
     <Card bg='#0005'className='procard' pos='relative'>
-      <Image src={imageSrc}  objectFit='contain' h='20rem'className='cardimg'/>
+      <Image src={imageSrc}  objectFit='contain' h='100%'className='cardimg'/>
       <ButtonGroup pos='absolute' top='40%' left='40%'spacing={8} className='probtn' display='none'>
         <Link color='gold' fontSize={'1.5rem'} href={gitlink} isExternal>GitHub</Link>
         <Link color='gold'href={netlink} isExternal fontSize={'1.5rem'}>Live</Link>
