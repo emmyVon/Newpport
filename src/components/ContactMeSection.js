@@ -28,11 +28,11 @@ const ContactMeSection = () => {
   const form = useRef();
 
   const sendEmail = (e) => {
-    emailjs.sendForm("service_4umfxw8", "template_17q095a", form.current, "TMEg8zjiZHB3U1vr8").then(
+    emailjs.sendForm("service_4umfxw8", "template_17q095a", form.current, "bpVQH7oF3yREy7zHM").then(
       (result) => {
         onOpen("success", "Response sent to Emmanuel");
         setTimeout(() => onClose(), 2000);
-        console.log("submitted");
+        console.log("submitted", form.current);
       },
       (error) => {
         onOpen("error", "Failed, please try again");
@@ -67,7 +67,8 @@ const ContactMeSection = () => {
 
   return (
     
-    <FullScreenSection isDarkBackground backgroundColor= "#2A4365" spacing={8}>
+    <FullScreenSection isDarkBackground backgroundColor="#0C0E0F"  spacing={8}>
+      {/* "#2A4365" */}
       
       <VStack w={'100%'}  alignItems="flex-start">
         <Heading fontSize={{base:'1rem',md:'3rem'}} alignSelf={"center"} id="contactme">

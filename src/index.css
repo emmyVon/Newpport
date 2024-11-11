@@ -1,54 +1,58 @@
-html{
+html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
-@import 'aos/dist/aos.css';
-*{
+@import "aos/dist/aos.css";
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-body{
-  background-color: #2A4365;
+body {
+  background-color: #2a4365;
 }
-.mainPlus{
+.mainPlus {
   overflow: hidden;
   opacity: 0.7;
 }
-.nav-link{
+.nav-link {
   display: flex;
 }
 
-.procard:hover .cardimg{
+.procard:hover .cardimg {
   opacity: 0.4;
 }
-.procard:hover .probtn{
+.procard:hover .probtn {
   display: flex;
 }
-.propic{
-  animation: boxmove 2s 2s 1 forwards;
+.propic {
+  animation: boxmove 5s 2s 1 forwards;
 }
 @keyframes boxmove {
-  from {left:0; top:0}
-  to {left:2rem; top: -3rem;}
-  
-}
-@media (max-width:768px) {
-  .nav-link{
+  from {
+    left: 0;
     top: 0;
-      right: 0;
-      background-color: white;
-      height: 90vh;
-      color: black;
-      flex-direction: column;
-      gap: 1.5rem;
-      display: none;
   }
-  .open{
-    display: flex; 
+  to {
+    left: 2rem;
+    top: -3rem;
   }
-    .nav-link .menu-icons{
-      order:3;
-    }
-  
+}
+@media (max-width: 768px) {
+  .nav-link {
+    top: 0;
+    right: 0;
+    background-color: white;
+    height: 90vh;
+    color: black;
+    flex-direction: column;
+    gap: 1.5rem;
+    display: none;
+  }
+  .open {
+    display: flex;
+  }
+  .nav-link .menu-icons {
+    order: 3;
+  }
 }
