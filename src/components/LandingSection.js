@@ -66,8 +66,12 @@ const LandingSection = () => {
               fontWeight: "600",
             }}
           >
-            <a href="./CV.pdf" download="./CV.pdf">
-              Download CV
+            <a
+              href="https://drive.google.com/file/d/1e3Jo9YBdYAcw7uY0FO3puy62AfWiy-md/view?usp=drivesdk"
+              target="_blank"
+              download="https://drive.google.com/file/d/1e3Jo9YBdYAcw7uY0FO3puy62AfWiy-md/view?usp=drivesdk"
+            >
+              View CV
             </a>
           </motion.button>
         </VStack>

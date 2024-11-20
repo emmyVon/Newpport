@@ -28,18 +28,25 @@ const ContactMeSection = () => {
   const form = useRef();
 
   const sendEmail = (e) => {
-    emailjs.sendForm("service_4umfxw8", "template_17q095a", form.current, "bpVQH7oF3yREy7zHM").then(
-      (result) => {
-        onOpen("success", "Response sent to Emmanuel");
-        setTimeout(() => onClose(), 2000);
-        console.log("submitted", form.current);
-      },
-      (error) => {
-        onOpen("error", "Failed, please try again");
-        setTimeout(() => onClose(), 2000);
-        console.log(error);
-      }
-    );
+    emailjs
+      .sendForm(
+        "service_4umfxw8",
+        "template_17q095a",
+        form.current,
+        "bpVQH7oF3yREy7zHM"
+      )
+      .then(
+        (result) => {
+          onOpen("success", "Response sent to Emmanuel");
+          setTimeout(() => onClose(), 2000);
+          console.log("submitted", form.current);
+        },
+        (error) => {
+          onOpen("error", "Failed, please try again");
+          setTimeout(() => onClose(), 2000);
+          console.log(error);
+        }
+      );
   };
 
   const formik = useFormik({
@@ -57,7 +64,10 @@ const ContactMeSection = () => {
         .trim()
         .min(3, "name just be more than three characters")
         .required("required"),
-      email: Yup.string().trim().email("invalid email address").required("required"),
+      email: Yup.string()
+        .trim()
+        .email("invalid email address")
+        .required("required"),
       type: Yup.string().oneOf(["hireMe", "openSource", "other"]),
       comment: Yup.string().required("required"),
     }),
@@ -66,18 +76,23 @@ const ContactMeSection = () => {
   // #512DA8 "#6765AD"
 
   return (
-    
-    <FullScreenSection isDarkBackground backgroundColor="#0C0E0F"  spacing={8}>
+    <FullScreenSection isDarkBackground backgroundColor="#0C0E0F" spacing={8}>
       {/* "#2A4365" */}
-      
-      <VStack w={'100%'}  alignItems="flex-start">
-        <Heading fontSize={{base:'1rem',md:'3rem'}} alignSelf={"center"} id="contactme">
+
+      <VStack w={"100%"} alignItems="flex-start">
+        <Heading
+          fontSize={{ base: "1rem", md: "3rem" }}
+          alignSelf={"center"}
+          id="contactme"
+        >
           Contact me
         </Heading>
         <Box p={2} rounded="md" w="100%">
           <form onSubmit={formik.handleSubmit} ref={form}>
             <VStack spacing={4}>
-              <FormControl isInvalid={formik.touched.firstName && formik.errors.firstName}>
+              <FormControl
+                isInvalid={formik.touched.firstName && formik.errors.firstName}
+              >
                 <FormLabel htmlFor="firstName">Name</FormLabel>
                 <Input
                   id="firstName"
@@ -87,7 +102,9 @@ const ContactMeSection = () => {
                 />
                 <FormErrorMessage>{formik.errors.firstName}</FormErrorMessage>
               </FormControl>
-              <FormControl isInvalid={formik.errors.email && formik.touched.email}>
+              <FormControl
+                isInvalid={formik.errors.email && formik.touched.email}
+              >
                 <FormLabel htmlFor="email">Email Address</FormLabel>
                 <Input
                   value={formik.values.email}
@@ -107,11 +124,15 @@ const ContactMeSection = () => {
                   onChange={formik.handleChange}
                 >
                   <option value="hireMe">Remote/Full-time Employment</option>
-                  <option value="openSource">Open source consultancy session</option>
+                  <option value="openSource">
+                    Open source consultancy session
+                  </option>
                   <option value="other">Other</option>
                 </Select>
               </FormControl>
-              <FormControl isInvalid={formik.touched.comment && formik.errors.comment}>
+              <FormControl
+                isInvalid={formik.touched.comment && formik.errors.comment}
+              >
                 <FormLabel htmlFor="comment">Your message</FormLabel>
                 <Textarea
                   id="comment"
@@ -122,7 +143,7 @@ const ContactMeSection = () => {
                 />
                 <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
               </FormControl>
-              <Button type="submit" bg="blue" width="full">
+              <Button type="submit" bg="blue" width="full" fontWeight={"bold"}>
                 Submit
               </Button>
             </VStack>
@@ -130,7 +151,6 @@ const ContactMeSection = () => {
         </Box>
       </VStack>
     </FullScreenSection>
-     
   );
 };
 
