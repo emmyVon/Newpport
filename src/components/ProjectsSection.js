@@ -44,7 +44,7 @@ const projects = [
     description:
       "A simple User dashboard for Dlex Business, integrated with user login and authentication. A well Structured user layout , Tracking Progress of Courses enrolled for, Deadlines for Homes and Date for test. This is just Frontend Structured not built with Backend integration",
     getImageSrc: () => require("../images/dlex.PNG"),
-    netlink: "https://dlex-test.netlify.app/dashboard",
+    netlink: "https://dlex-test.netlify.app/",
     gitlink: "https://github.com/emmyVon/Dlex-pro",
   },
   {
