@@ -5,15 +5,6 @@ import ProCard from "./ProCard";
 
 const projects = [
   {
-    title: "Shoe E-Commerce",
-    description:
-      "A shoe e-commerce site built with React, with ability to display different view of the Product. Well organised Cart and formatted total Price of Goods added to Cart ",
-    getImageSrc: () =>
-      require("../images/Web capture_19-7-2023_182825_remarkable-churros-670b96.netlify.app.jpeg"),
-    netlink: "https://remarkable-churros-670b96.netlify.app/",
-    gitlink: "https://github.com/emmyVon/shoe-ecommerce",
-  },
-  {
     title: "Shorten-URL",
     description:
       "Landing Page for a App that Builds brand, create Shorter links and assisting in making brands publicly recognized",
@@ -46,6 +37,15 @@ const projects = [
     getImageSrc: () => require("../images/dlex.PNG"),
     netlink: "https://dlex-test.netlify.app/",
     gitlink: "https://github.com/emmyVon/Dlex-pro",
+  },
+  {
+    title: "Shoe E-Commerce",
+    description:
+      "A shoe e-commerce site built with React, with ability to display different view of the Product. Well organised Cart and formatted total Price of Goods added to Cart. Note: this is a work in progress and keeps updating and revamping daily ",
+    getImageSrc: () =>
+      require("../images/Web capture_19-7-2023_182825_remarkable-churros-670b96.netlify.app.jpeg"),
+    netlink: "https://remarkable-churros-670b96.netlify.app/",
+    gitlink: "https://github.com/emmyVon/shoe-ecommerce",
   },
   {
     title: "Chi-Homes",
